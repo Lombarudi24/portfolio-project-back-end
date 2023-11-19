@@ -5,14 +5,14 @@ CREATE DATABASE bankdata_dev;
 
 CREATE TABLE bankdata(
     id SERIAL PRIMARY KEY,
-    ssn INT VARCHAR(9) NOT NULL
+    ssn INTEGER VARCHAR(11) NOT NULL
     firstname VARCHAR(50) NOT NULL,
     middlename TEXT,
     lastname VARCHAR(50) NOT NULL,
-    dob  DATE ,
+    dob  INTEGER (10) ,
     email TEXT
     city TEXT,
-    mobilenum INT VARCHAR(10)
+    mobile_num INTEGER VARCHAR(10)
     jobcategory VARCHAR(20) NOT NULL,
 );
 
@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS acccount;
 
 CREATE TABLE acccount(
     id PRIMARY KEY,
-    accopenbal INT(10)
+    accopenbal INTEGER(10)
     accopendate DATE,
     acctype TEXT NOT NULL,
     accstatus BOOLEAN,
