@@ -18,6 +18,24 @@ VALUES
 ('790-04-8758', 'Sarah', 'T', 'Ignayshun', '09-10-1983', 'Signayshun234@outlook.com', 'Irvington', '5092482135', 'Hollydayinn');
 
 
-INSERT INTO acccount (bankdata_id, accopenbal,  accopendate, acctype, accstatus )
+INSERT INTO acccount (bankdata_id, accopenbal, accopendate, accbal, acctype, is_Active )
 VALUES
-()
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true'),
+('10', '500', '12-09-2015', '20000', 'Checking', 'true');

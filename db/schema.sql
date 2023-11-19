@@ -22,8 +22,9 @@ CREATE TABLE acccount(
     id PRIMARY KEY,
     accopenbal INTEGER(10)
     accopendate DATE,
+    accbal INTEGER(10)
     acctype TEXT NOT NULL,
-    accstatus BOOLEAN,
+    is_active BOOLEAN,
     bankdata_id INTEGER REFERENCES bankdata (id) ON DELETE CASCADE 
 );
 
