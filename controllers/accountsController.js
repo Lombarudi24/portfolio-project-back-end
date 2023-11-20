@@ -17,3 +17,10 @@ accounts.get("/", async (req, res) => {
         res.status(400).json({ error: "server error" })
     }
 });
+
+
+
+
+
+
+module.exports = accounts

@@ -18,9 +18,9 @@ CREATE TABLE bankdata (
 
 
 
-DROP TABLE IF EXISTS acccount;
+DROP TABLE IF EXISTS acccounts;
 
-CREATE TABLE acccount (
+CREATE TABLE acccounts (
     id SERIAL PRIMARY KEY,
     accopenbal INTEGER,
     accopendate DATE,

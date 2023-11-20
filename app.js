@@ -15,6 +15,13 @@ app.get("/", (req, res) => {
 });
 
 
+const bankdataController = require("./controllers/bankdataController");
+app.use("/bankdata", bankdataController);
+
+app.get("*", (req, res) => {
+  res.status(404).send("Page not found");
+});
+
 
 
 module.exports = app
