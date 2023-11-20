@@ -4,7 +4,7 @@ const getAllAccounts = async (bankdata_id) => {
   try {
     const allAccounts = await db.any(
       "SELECT * FROM Accounts WHERE bankdata_id=$1",
-      bookmark_id
+      bankdata_id
     );
     return allAccounts;
   } catch (error) {
@@ -21,16 +21,17 @@ const getAccount = async (id) => {
   }
 };
 
-const newAccount = async (Account) => {
+const newAccount = async (account) => {
   try {
     const newAccount = await db.one(
-      "INSERT INTO Accounts (Accounter, title, content, rating, bookmark_id) VALUES($1, $2, $3, $4, $5) RETURNING *",
+      "INSERT INTO accounts (accopenbal, accopendate, accbal, acctype,  is_active, bookmark_id) VALUES($1, $2, $3, $4, $5, 46) RETURNING *",
       [
-        Account.Accounter,
-        Account.title,
-        Account.content,
-        Account.rating,
-        Account.bookmark_id,
+        account.accopenbal,
+        account.accopendate,
+        account.accbal,
+        account.acctype,
+         is_active,
+        account.bankdata_id,
       ]
     );
     return newAccount;
@@ -42,7 +43,7 @@ const newAccount = async (Account) => {
 const deleteAccount = async (id) => {
   try {
     const deletedAccount = await db.one(
-      "DELETE FROM Accounts WHERE id = $1 RETURNING *",
+      "DELETE FROM accounts WHERE id = $1 RETURNING *",
       id
     );
     return deletedAccount;
@@ -51,17 +52,18 @@ const deleteAccount = async (id) => {
   }
 };
 
-const updateAccount = async (Account) => {
+const updateAccount = async (account) => {
   try {
     const updatedAccount = await db.one(
-      "UPDATE Accounts SET Accounter=$1, title=$2, content=$3, rating=$4, bookmark_id=$5 where id=$6 RETURNING *",
+      "UPDATE accounts SET accopenbal=$1, accopendate=$2, accbal=$3, acctype=$4, is_active=$5  bookmark_id=$6 WHERE id=$7 RETURNING *",
       [
-        Account.Accounter,
-        Account.title,
-        Account.content,
-        Account.rating,
-        Account.bookmark_id,
-        Account.id,
+        account.accopenbal,
+        account.accopendate,
+        account.accbal,
+        account.acctype,
+        account.is_active,
+        account.bankdata_id,
+        account.id,
       ]
     );
     return updatedAccount;

@@ -22,7 +22,7 @@ const getBankdata = async (id) => {
 const createBankdata = async (bankdata) => {
   try {
     const newBankdata = await db.one(
-      "INSERT INTO Bankdata (ssn, firstname, middlename, lastname, dob, email, city, mobile_num, employer) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+      "INSERT INTO bankdata (ssn, firstname, middlename, lastname, dob, email, city, mobile_num, employer) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
       [bankdata.ssn, bankdata.firstname, bankdata.middlename, bankdata.lastname, bankdata.dob, bankdata.email, bankdata.city, bankdata.mobile_num, bankdata.employer]
     );
     return newBankdata;
@@ -34,7 +34,7 @@ const createBankdata = async (bankdata) => {
 const deleteBankdata = async (id) => {
   try {
     const deletedBankdata = await db.one(
-      "DELETE FROM Bankdata WHERE id = $1 RETURNING *",
+      "DELETE FROM bankdata WHERE id = $1 RETURNING *",
       id
     );
     return deletedBankdata;
@@ -46,7 +46,7 @@ const deleteBankdata = async (id) => {
 const updateBankdata = async (id, bankdata) => {
   try {
     const updatedBankdata = await db.one(
-      "UPDATE Bankdata SET ssn=$1, firstname=$2, middlename=$3, lastname=$4, dob=$5, email=$6, city=$7, mobile_num=$8, employer=$9 RETURNING *",
+      "UPDATE Bankdata SET ssn=$1, firstname=$2, middlename=$3, lastname=$4, dob=$5, email=$6, city=$7, mobile_num=$8, employer=$9 WHERE id=$10 RETURNING *",
       [
         bankdata.ssn,
         bankdata.firstname,
@@ -57,6 +57,7 @@ const updateBankdata = async (id, bankdata) => {
         bankdata.city,
         bankdata.mobile_num,
         bankdata.employer,
+        id
       ]
     );
     return updatedBankdata;
@@ -66,9 +67,9 @@ const updateBankdata = async (id, bankdata) => {
 };
 
 module.exports = {
-  getAllBankdata
-//   getBankdata,
-//   createBankdata,
-//   deleteBankdata,
-//   updateBankdata,
+  getAllBankdata,
+  getBankdata,
+  createBankdata,
+  deleteBankdata,
+  updateBankdata,
 };

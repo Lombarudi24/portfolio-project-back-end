@@ -1,7 +1,7 @@
 const express = require("express")
 const bankdata = express.Router();
 
-const accountController = require('./accountController');
+const accountController = require('./accountsController');
 
 bankdata.use("/:bankdata_id/account", accountController)
 
