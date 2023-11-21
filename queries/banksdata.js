@@ -1,8 +1,8 @@
-const db = require("../db/dbConfig.js");
+const db = require("../db/dbConfig");
 
 const getAllBankdata = async () => {
   try {
-    const allBankdata = await db.any("SELECT * FROM bankdata");
+    const allBankdata = await db.any("SELECT * FROM banksdata");
     return allBankdata;
   } catch (error) {
     return error;
@@ -11,7 +11,7 @@ const getAllBankdata = async () => {
 
 const getBankdata = async (id) => {
   try {
-    const oneBankdata = await db.one("SELECT * FROM Bankdata WHERE id=$1", id);
+    const oneBankdata = await db.one("SELECT * FROM banksdata WHERE id=$1", id);
     return oneBankdata;
   } catch (error) {
     return error;
@@ -22,7 +22,7 @@ const getBankdata = async (id) => {
 const createBankdata = async (bankdata) => {
   try {
     const newBankdata = await db.one(
-      "INSERT INTO bankdata (ssn, firstname, middlename, lastname, dob, email, city, mobile_num, employer) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+      "INSERT INTO banksdata (ssn, firstname, middlename, lastname, dob, email, city, mobile_num, employer) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
       [bankdata.ssn, bankdata.firstname, bankdata.middlename, bankdata.lastname, bankdata.dob, bankdata.email, bankdata.city, bankdata.mobile_num, bankdata.employer]
     );
     return newBankdata;

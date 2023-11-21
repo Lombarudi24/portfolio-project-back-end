@@ -1,7 +1,7 @@
-\c bankdata_dev;
+\c banksdata_dev;
 
 
-INSERT INTO bankdata (ssn, firstname, middlename, lastname, dob, email, city, mobile_num, employer )
+INSERT INTO banksdata (ssn, firstname, middlename, lastname, dob, email, city, mobile_num, employer )
 VALUES
 ('123452354', 'Allie', 'G', 'Morisen', '09-10-1983', 'Morisen8310@gmail.com', 'Dover', '9733881436', 'Amazon'),
 ('239080554', 'Lois', 'Di', 'Nominator', '12-24-1973', 'makeitup23@gmail.com', 'Bayonne', '8623881436', 'Shoprite'),
@@ -18,7 +18,7 @@ VALUES
 ('790048758', 'Sarah', 'T', 'Ignayshun', '09-10-1983', 'Signayshun234@outlook.com', 'Irvington', '5092482135', 'Hollydayinn');
 
 
-INSERT INTO acccounts (bankdata_id, accopenbal, accopendate, accbal, acctype, is_Active )
+INSERT INTO accounts (banksdata_id, accopenbal, accopendate, accbal, acctype, is_Active )
 VALUES
 ('10', '500', '12-09-2015', '20000', 'saving', 'true'),
 ('1', '900', '12-09-2015', '5000', 'Checking', 'true'),
@@ -35,7 +35,7 @@ VALUES
 ('7', '250', '12-09-2015', '20007', 'saving', 'true'),
 ('10', '300', '12-09-2015', '20000', 'Checking', 'true'),
 ('9', '200', '12-09-2015', '4004', 'saving', 'true'),
-('6', '100', '12-09-2015', '3674', 'Checking', 'true'),
+('6', '100', '12-09-2015', '3674', 'Checking', 'false'),
 ('11', '350', '12-09-2015', '38590', 'business', 'true'),
 ('10', '230', '12-09-2015', '476859', 'Checking', 'true'),
 ('6', '10000', '12-09-2015', '504928', 'business', 'true');

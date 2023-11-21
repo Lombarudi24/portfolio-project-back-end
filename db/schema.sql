@@ -1,9 +1,9 @@
-DROP DATABASE IF EXISTS bankdata_dev;
-CREATE DATABASE bankdata_dev;
+DROP DATABASE IF EXISTS banksdata_dev;
+CREATE DATABASE banksdata_dev;
 
-\c bankdata_dev
+\c banksdata_dev
 
-CREATE TABLE bankdata (
+CREATE TABLE banksdata (
     id SERIAL PRIMARY KEY,
     ssn INTEGER NOT NULL,
     firstname VARCHAR(50) NOT NULL,
@@ -18,17 +18,17 @@ CREATE TABLE bankdata (
 
 
 
-DROP TABLE IF EXISTS acccounts;
+-- DROP TABLE IF EXISTS acccounts;
 
-CREATE TABLE acccounts (
+CREATE TABLE accounts (
     id SERIAL PRIMARY KEY,
     accopenbal INTEGER,
     accopendate DATE,
     accbal INTEGER,
     acctype TEXT NOT NULL,
     is_active BOOLEAN,
-    bankdata_id INTEGER REFERENCES bankdata (id) ON DELETE CASCADE 
-)
+    banksdata_id INTEGER REFERENCES banksdata (id) ON DELETE CASCADE 
+);
 
 
 

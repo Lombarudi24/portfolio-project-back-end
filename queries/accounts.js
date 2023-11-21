@@ -1,9 +1,9 @@
-const db = require("../db/dbConfig.js");
+const db = require("../db/dbConfig");
 
 const getAllAccounts = async (bankdata_id) => {
   try {
     const allAccounts = await db.any(
-      "SELECT * FROM Accounts WHERE bankdata_id=$1",
+      "SELECT * FROM accounts WHERE banksdata_id=$1",
       bankdata_id
     );
     return allAccounts;
@@ -24,14 +24,14 @@ const getAccount = async (id) => {
 const newAccount = async (account) => {
   try {
     const newAccount = await db.one(
-      "INSERT INTO accounts (accopenbal, accopendate, accbal, acctype,  is_active, bookmark_id) VALUES($1, $2, $3, $4, $5, 46) RETURNING *",
+      "INSERT INTO accounts (accopenbal, accopendate, accbal, acctype,  is_active, banksdata_id) VALUES($1, $2, $3, $4, $5, 46) RETURNING *",
       [
         account.accopenbal,
         account.accopendate,
         account.accbal,
         account.acctype,
-         is_active,
-        account.bankdata_id,
+         account.is_active,
+        account.banksdata_id,
       ]
     );
     return newAccount;
@@ -55,14 +55,14 @@ const deleteAccount = async (id) => {
 const updateAccount = async (account) => {
   try {
     const updatedAccount = await db.one(
-      "UPDATE accounts SET accopenbal=$1, accopendate=$2, accbal=$3, acctype=$4, is_active=$5  bookmark_id=$6 WHERE id=$7 RETURNING *",
+      "UPDATE accounts SET accopenbal=$1, accopendate=$2, accbal=$3, acctype=$4, is_active=$5  banksdata_id=$6 WHERE id=$7 RETURNING *",
       [
         account.accopenbal,
         account.accopendate,
         account.accbal,
         account.acctype,
         account.is_active,
-        account.bankdata_id,
+        account.banksdata_id,
         account.id,
       ]
     );

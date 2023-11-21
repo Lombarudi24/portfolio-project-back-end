@@ -1,16 +1,16 @@
 const express = require("express");
 
-const { getBankdata } = require("../queries/bankdata")
+const { getBankdata } = require("../queries/banksdata");
 
 const accounts = express.Router({ mergeParams: true });
 
 const { getAllAccounts } = require("../queries/accounts")
 
 accounts.get("/", async (req, res) => {
-    const { bankdata_id } = req.params;
-    const accounts = await getAllAccounts(bankdata_id);
-    const bankdata = await getBankdata(bankdata_id);
-
+    const { banksdata_id } = req.params;
+    const accounts = await getAllAccounts(banksdata_id);
+    const bankdata = await getBankdata(banksdata_id);
+console.log(accounts)
     if (bankdata.id) {
         res.status(200).json({ ...bankdata, accounts })
     } else {
