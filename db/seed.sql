@@ -11,11 +11,11 @@ VALUES
 ('675454067', 'Ivan', 'E', 'Yang', '08-29-1974', 'Ivneyang98@hotmail.com', 'Dover', '3056743853', 'Amazon'),
 ('435026754', 'Mustafa', 'L', 'Stanley', '05-24-1974', 'LstanleyMustafa@aol.com', 'Miamidade', '8622306539', 'City Market'),
 ('790048758', 'Carmen', 'M', 'Attaway', '04-27-1978', 'carmenAttaway09@aol.com', 'Moristown', '9739082453', 'Fibnet Llc'),
-('790048758', 'Manny', 'I', 'Ivanka', '03-22-2000', 'Ivankaimanni@hotmail.com', 'Orange', '5648562908', 'Roseber Entreprise'),
-('790048758', 'Norma', 'W', 'Willie', '10-17-68', 'williewnorma68@goutlook.com', 'New Brunswik', '5463872698', 'Emetech'),
-('790048758', 'Theresa', 'R', 'Normandi', '05-11-1988', 'Thenoendi004@yahoo.com', 'East Orange', '5634656098', 'Maplewood Berverage'),
-('790048758', 'Anna', '', 'Versaree', '06-15-1979', 'sareeanna56@gmail.com', 'Newark', '9734561487', 'Arizona'),
-('790048758', 'Sarah', 'T', 'Ignayshun', '09-10-1983', 'Signayshun234@outlook.com', 'Irvington', '5092482135', 'Hollydayinn');
+('836283847', 'Manny', 'I', 'Ivanka', '03-22-2000', 'Ivankaimanni@hotmail.com', 'Orange', '5648562908', 'Roseber Entreprise'),
+('745362903', 'Norma', 'W', 'Willie', '10-17-68', 'williewnorma68@goutlook.com', 'New Brunswik', '5463872698', 'Emetech'),
+('246383748', 'Theresa', 'R', 'Normandi', '05-11-1988', 'Thenoendi004@yahoo.com', 'East Orange', '5634656098', 'Maplewood Berverage'),
+('750239385', 'Anna', '', 'Versaree', '06-15-1979', 'sareeanna56@gmail.com', 'Newark', '9734561487', 'Arizona'),
+('546739295', 'Sarah', 'T', 'Ignayshun', '09-10-1983', 'Signayshun234@outlook.com', 'Irvington', '5092482135', 'Hollydayinn');
 
 
 INSERT INTO accounts (banksdata_id, accopenbal, accopendate, accbal, acctype, is_Active )
