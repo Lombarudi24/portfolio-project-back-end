@@ -15,8 +15,11 @@ app.get("/", (req, res) => {
 });
 
 
-const bankdataController = require("./controllers/bankdataController");
+const bankdataController = require("./Controllers/bankdataController");
 app.use("/bankdata", bankdataController);
+
+const accountsControllers = require("./Controllers/accountsController")
+app.use("/accounts", accountsControllers)
 
 app.get("*", (req, res) => {
   res.status(404).send("Page not found");

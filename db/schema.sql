@@ -18,7 +18,7 @@ CREATE TABLE banksdata (
 
 
 
--- DROP TABLE IF EXISTS acccounts;
+-- DROP TABLE IF EXISTS accounts;
 
 CREATE TABLE accounts (
     id SERIAL PRIMARY KEY,

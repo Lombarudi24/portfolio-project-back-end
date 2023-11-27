@@ -34,7 +34,7 @@ const createBankdata = async (bankdata) => {
 const deleteBankdata = async (id) => {
   try {
     const deletedBankdata = await db.one(
-      "DELETE FROM bankdata WHERE id = $1 RETURNING *",
+      "DELETE FROM banksdata WHERE id = $1 RETURNING *",
       id
     );
     return deletedBankdata;
@@ -46,7 +46,7 @@ const deleteBankdata = async (id) => {
 const updateBankdata = async (id, bankdata) => {
   try {
     const updatedBankdata = await db.one(
-      "UPDATE Bankdata SET ssn=$1, firstname=$2, middlename=$3, lastname=$4, dob=$5, email=$6, city=$7, mobile_num=$8, employer=$9 WHERE id=$10 RETURNING *",
+      "UPDATE Banksdata SET ssn=$1, firstname=$2, middlename=$3, lastname=$4, dob=$5, email=$6, city=$7, mobile_num=$8, employer=$9 WHERE id=$10 RETURNING *",
       [
         bankdata.ssn,
         bankdata.firstname,
